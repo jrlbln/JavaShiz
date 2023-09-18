@@ -1,0 +1,56 @@
+//Day21
+
+import java.util.Scanner;
+
+public class DayTwentyOne {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Exercise 75");
+
+        System.out.print("The given string is: ");
+        String givenString = scan.nextLine();
+        char firstChar = givenString.charAt(0);
+        String prefixString = Character.toString(firstChar);
+
+        if (givenString.substring(1).contains(prefixString)) {
+            System.out.println("The prefix string '" + prefixString + "' appears somewhere else in the given string.");
+        } else {
+            System.out.println(
+                    "The prefix string '" + prefixString + "' does not appear anywhere else in the given string.");
+        }
+
+        System.out.println("Exercise 76");
+
+        System.out.print("The given string is: ");
+        String str = scan.nextLine();
+
+        System.out.print("The substring to check is: ");
+        String substring = scan.nextLine();
+
+        if (isSubstringInMiddle(str, substring)) {
+            System.out.println("The substring appears in the middle of the string.");
+        } else {
+            System.out.println("The substring does not appear in the middle of the string.");
+        }
+    }
+
+    public static boolean isSubstringInMiddle(String str, String substring) {
+        int strLength = str.length();
+        int subLength = substring.length();
+
+        if (strLength <= 2 || subLength > strLength) {
+            return false;
+        }
+
+        int middleIndex = strLength / 2;
+        int start = middleIndex - 1;
+        int end = middleIndex + 1;
+
+        if (strLength % 2 == 0) {
+            start++;
+        }
+
+        return str.substring(start, end + 1).contains(substring);
+    }
+}

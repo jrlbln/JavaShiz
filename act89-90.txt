@@ -1,0 +1,37 @@
+//Day22_89-90
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.Scanner;
+public class Day22 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Exercise 89");
+        
+        System.out.print("Insert String: ");
+        String firstString = scan.nextLine();
+        
+        System.out.print("Insert string to be replace: ");
+        String replaceString = scan.nextLine();
+        
+        System.out.println("The output is: " + firstString.replace(replaceString, "is not"));
+        
+        System.out.println("Exercise 90");
+        
+        System.out.print("Insert String with numbers to be add: ");
+        String inputString = scan.nextLine();
+
+        // Regular expression pattern to match numbers
+        Pattern pattern = Pattern.compile("\\d+");
+        Matcher matcher = pattern.matcher(inputString);
+
+        int sum = 0;
+        while (matcher.find()) {
+            int number = Integer.parseInt(matcher.group());
+            sum += number;
+        }
+
+        System.out.println("The sum of all numbers in the string is: " + sum);
+        
+    }
+}

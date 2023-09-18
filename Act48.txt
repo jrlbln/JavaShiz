@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class NumberComparison {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Input the 1st number: ");
+        int number1 = scanner.nextInt();
+
+        System.out.print("Input the 2nd number: ");
+        int number2 = scanner.nextInt();
+
+        System.out.print("Input the 3rd number: ");
+        int number3 = scanner.nextInt();
+
+        boolean result;
+        
+        if ("abc".equals("true")) {
+            result = number3 > number2;
+        } else {
+            result = number2 > number1 && number3 > number2;
+        }
+
+        System.out.println("The result is: " + result);
+
+        scanner.close();
+    }
+}

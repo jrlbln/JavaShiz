@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main {
+
+   public static void main(String args[]) {
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Case No.46 \n");
+       System.out.println("Input a number (String): ");
+       String str = sc.nextLine();
+
+       int num = Integer.parseInt(str);
+       System.out.println("The Integer Value is "
+               + num);
+        
+        //test if string is converted to Integer
+        //System.out.println("\n");
+        //System.out.println(str+100);
+        //System.out.println(num+100);
+   }
+}

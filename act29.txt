@@ -1,0 +1,45 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+import java.util.Scanner;
+class Activity29 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Input 1st Integer: ");
+        int num1 = scanner.nextInt();
+        
+        System.out.print("Input 2nd Integer: ");
+        int num2 = scanner.nextInt();
+        
+        //calculate the sum
+        int sum = num1 + num2;
+        System.out.println("Sum of two integers: " + sum);
+        
+        //calculate the difference
+        int difference = num1 - num2;
+        System.out.println("Difference of two integers: " + difference);
+        
+        //calculate the product
+        int product = num1 * num2;
+        System.out.println("Product of two integers: " + product);
+        
+        //calculate the average
+        double average = (double) (num1 + num2) / 2;
+        System.out.printf("Average of two integers: %.2f%n ", average);
+        
+        //calculate the distance
+        int distance = Math.abs(num1 - num2);
+        System.out.println("Distance of two integers: " + distance);
+        
+        //calculate the maximum
+        int max = Math.max(num1, num2);
+        System.out.println("Max of two integers: " + max);
+        
+        //calculate the maximum
+        int min = Math.min(num1, num2);
+        System.out.println("Min of two integers: " + min);
+        
+        scanner.close();
+    }
+}

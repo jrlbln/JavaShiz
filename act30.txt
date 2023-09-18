@@ -1,0 +1,23 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+import java.util.Scanner;
+
+public class Activity30 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Input six non-negative digits: ");
+        int number = scanner.nextInt();
+
+        // Convert the integer to a string
+        String numberString = String.valueOf(number);
+
+        // Iterate over each character in the string and print the digits
+        for (int i = 0; i < numberString.length(); i++) {
+            System.out.print(numberString.charAt(i) + " ");
+        }
+
+        scanner.close();
+    }
+}

@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+        
+        System.out.print("Enter the number of characters to be repeated from the end of the string: ");
+        int charCount = scanner.nextInt();
+        
+        System.out.print("Enter the number of lines to be printed: ");
+        int lineCount = scanner.nextInt();
+
+        // Close the scanner
+        scanner.close();
+
+        if (charCount > inputString.length()) {
+            System.out.print("The number of characters to be repeated is larger than the string length.");
+        } else {
+            String subString = inputString.substring(inputString.length() - charCount);
+            printRepeatedString(subString, lineCount);
+        }
+    }
+
+    public static void printRepeatedString(String str, int count) {
+        for (int i = 0; i < count; i++) {
+            System.out.println(str);
+        }
+    }
+}

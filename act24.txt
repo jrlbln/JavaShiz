@@ -1,0 +1,40 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+public class MinutesToYearsDays {
+    private static Scanner scan = new Scanner(System.in);
+    public static void main(String[] args) {
+        System.out.print("Input the number of minutes: ");
+        int minutes = scan.nextInt();
+        
+        convertAction(minutes);
+    }
+
+    private static void convertAction(int minutes) {
+        int minutes_copy = minutes;
+        int minsPerYear = 525600;
+        int minsPerDay = 1440;
+
+        int yearCount = 0;
+        int dayCount = minutes / minsPerYear;
+
+        if(minutes > minsPerYear){
+            yearCount = minutes / minsPerYear;
+            minutes -= (minsPerYear * yearCount);
+
+            if(minutes > minsPerDay){
+                dayCount = minutes / minsPerDay;
+            }
+        }
+        else{
+            yearCount = 0;
+            dayCount = minutes / minsPerDay;
+        }
+
+
+        System.out.printf("%d minutes is approximately %d years and %d days", minutes_copy, yearCount, dayCount);
+    }
+
+
+
+}

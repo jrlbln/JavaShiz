@@ -1,0 +1,32 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+import java.util.Scanner;
+public class SumDigits {
+    private static Scanner scan = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.print("Input an integer between 0 and 1000: ");
+        int num = scan.nextInt();
+
+        if (num >= 0 && num <= 1000) {
+            extractDigits(num);
+        }else{
+            System.out.println("Integer must be between 0 and 1000 only");
+        }
+    }
+
+    private static void extractDigits(int num) {
+        int num_copy = num;
+        int sum = 0;
+        int rem;
+
+        while (num > 0){
+            rem = num % 10;
+            sum += rem;
+            num /= 10;
+        }
+
+        System.out.printf("The sum of all digits in %d is %d", num_copy, sum);
+    }
+}
